@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://cf4140e6383ux"]
+
+[ext_resource type="Texture2D" uid="uid://c1s0g55nnfdf8" path="res://assets/Animatedsnowballgameprojectile1t5w5l4t2a990w876z-removebg-preview.png" id="1_05fvc"]
+[ext_resource type="Script" path="res://scenes/mob_2.gd" id="1_bc82r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56juc"]
+atlas = ExtResource("1_05fvc")
+region = Rect2(0, 108, 168, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yit7"]
+atlas = ExtResource("1_05fvc")
+region = Rect2(168, 108, 168, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebfhx"]
+atlas = ExtResource("1_05fvc")
+region = Rect2(336, 108, 168, 108)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ds8u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56juc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yit7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebfhx")
+}],
+"loop": true,
+"name": &"snow",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l84p2"]
+radius = 31.3073
+height = 73.999
+
+[node name="RigidBody2D" type="RigidBody2D"]
+script = ExtResource("1_bc82r")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(216, 36)
+rotation = -1.5708
+scale = Vector2(0.351356, 0.351356)
+sprite_frames = SubResource("SpriteFrames_0ds8u")
+animation = &"snow"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(213, 45)
+rotation = -1.5708
+scale = Vector2(0.351356, 0.351356)
+shape = SubResource("CapsuleShape2D_l84p2")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(213, 45)
+rotation = -1.5708
+scale = Vector2(0.351356, 0.351356)

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dek5ey16yadhw"]
+
+[ext_resource type="Texture2D" uid="uid://uk0ioofx6tyo" path="res://assets/2uoopep6iol91.webp" id="1_euqto"]
+
+[node name="Background" type="TextureRect"]
+offset_right = 648.0
+offset_bottom = 1160.0
+
+[node name="2Uoopep6Iol91" type="Sprite2D" parent="."]
+position = Vector2(176, 296.001)
+scale = Vector2(0.24, 0.711109)
+texture = ExtResource("1_euqto")
